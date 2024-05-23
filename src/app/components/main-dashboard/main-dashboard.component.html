@@ -1,1 +1,39 @@
-<p>main-dashboard works!</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <!-- Card 1: Collections -->
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-lg font-semibold mb-2">Collections</h3>
+    <p class="text-4xl font-bold text-gray-800">{{ totalCollections }}</p>
+  </div>
+
+  <!-- Card 2: Sign-ups -->
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-lg font-semibold mb-2">Sign-ups</h3>
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-2xl font-bold text-gray-800">{{ totalSignups }}</p>
+        <div class="text-sm text-gray-500">
+          <span>Analytics: {{ signupsAnalytics }}</span>
+          <span>Finance: {{ signupsFinance }}</span>
+          <span>Timetable: {{ signupsTimetable }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Total Revenue -->
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-lg font-semibold mb-2">Total Revenue</h3>
+    <p class="text-4xl font-bold text-gray-800">{{ totalRevenue }}</p>
+    <div class="text-sm text-gray-500">
+      <span>Analytics: {{ revenueAnalytics }}</span>
+      <span>Finance: {{ revenueFinance }}</span>
+      <span>Timetable: {{ revenueTimetable }}</span>
+    </div>
+  </div>
+
+  <!-- Card 4: Bounced Cheques -->
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <h3 class="text-lg font-semibold mb-2">Bounced Cheques</h3>
+    <p class="text-4xl font-bold text-gray-800">{{ bouncedCheques }}</p>
+  </div>
+</div>
