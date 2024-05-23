@@ -7,6 +7,7 @@
           {{ column }}
         </th>
       </ng-container>
+      <th scope="col" class="px-6 py-3">Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -16,6 +17,13 @@
           {{ item[column] }}
         </td>
       </ng-container>
+      <td class="px-6 py-4">
+        <app-button-component
+          (editClicked)="onEdit(item)"
+          (createClicked)="onCreate(item)"
+          (deleteClicked)="onDelete(item)"
+        ></app-button-component>
+      </td>
     </tr>
     </tbody>
   </table>
