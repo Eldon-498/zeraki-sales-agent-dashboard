@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {ChartData, ChartEvent, ChartOptions, ChartType} from "chart.js";
+import {Component, Input, SimpleChanges} from '@angular/core';
+import {Chart, ChartData, ChartEvent, ChartOptions, ChartType, registerables} from "chart.js";
 import {BaseChartDirective} from "ng2-charts";
 
 @Component({
@@ -17,6 +17,9 @@ export class BarGraphComponent {
     datasets: []
   };
   @Input() label: string = '';
+  constructor() {
+    Chart.register(...registerables);
+  }
 
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -50,4 +53,13 @@ export class BarGraphComponent {
     console.log('Chart clicked:', event);
     // Add your logic for handling chart click events here
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // Ensure change detection runs properly
+    if (changes['data']) {
+      console.log('Data changed:', this.data);
+    }
+  }
+
+
 }
