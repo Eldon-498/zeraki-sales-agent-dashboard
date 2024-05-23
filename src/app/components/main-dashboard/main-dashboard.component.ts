@@ -4,6 +4,8 @@ import {SidenavComponent} from "../side-nav/sidenav.component";
 import {RouterOutlet} from "@angular/router";
 import {SchoolsComponent} from "../schools/schools.component";
 import {PieChartComponent} from "../../shared/pie-chart/pie-chart.component";
+import {ChartData} from "chart.js";
+import {BarGraphComponent} from "../../shared/bar-graph/bar-graph.component";
 
 @Component({
   selector: 'app-main-dashboard',
@@ -13,6 +15,7 @@ import {PieChartComponent} from "../../shared/pie-chart/pie-chart.component";
     SidenavComponent,
     SchoolsComponent,
     PieChartComponent,
+    BarGraphComponent,
   ],
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css'
@@ -31,4 +34,24 @@ export class MainDashboardComponent {
   public analyticsPieChartData: number[] = [300, 500];
   public financePieChartData: number[] = [200, 800];
   public timetablePieChartData: number[] = [600, 400];
+  public analyticsBarChartData: ChartData<'bar'> = {
+    labels: ['Primary', 'Secondary', 'IGCSE'],
+    datasets: [
+      { data: [100, 200, 150], label: 'Zeraki Analytics' }
+    ]
+  };
+
+  public financeBarChartData: ChartData<'bar'> = {
+    labels: ['Primary', 'Secondary', 'IGCSE'],
+    datasets: [
+      { data: [80, 300, 120], label: 'Zeraki Finance' }
+    ]
+  };
+
+  public timetableBarChartData: ChartData<'bar'> = {
+    labels: ['Primary', 'Secondary', 'IGCSE'],
+    datasets: [
+      { data: [150, 180, 200], label: 'Zeraki Timetable' }
+    ]
+  };
 }
