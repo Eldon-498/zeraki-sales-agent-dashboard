@@ -36,9 +36,32 @@
     <h3 class="text-lg font-semibold mb-2">Bounced Cheques</h3>
     <p class="text-4xl font-bold text-gray-800">{{ bouncedCheques }}</p>
   </div>
-  <app-pie-chart [data]="analyticsPieChartData" [label]="'Zeraki Analytics'"></app-pie-chart>
-  <app-pie-chart [data]="financePieChartData" [label]="'Zeraki Finance'"></app-pie-chart>
-  <app-pie-chart [data]="timetablePieChartData" [label]="'Zeraki Timetable'"></app-pie-chart>
+
+</div>
+<h2 class="text-center mt-3">Target Analytics</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <app-pie-chart [data]="analyticsPieChartData" [label]="'Zeraki Analytics'"></app-pie-chart>
+  </div>
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <app-pie-chart [data]="financePieChartData" [label]="'Zeraki Finance'"></app-pie-chart>
+  </div>
+  <div class="bg-white rounded-lg shadow-md p-6">
+    <app-pie-chart [data]="timetablePieChartData" [label]="'Zeraki Timetable'"></app-pie-chart>
+  </div>
+</div>
+
+<h2 class="text-center mt-3">Signups Analytics</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="bg-white rounded-lg shadow-md p-6">
+<app-bar-graph [data]="analyticsBarChartData" [label]="'Zeraki Analytics'"></app-bar-graph>
+  </div>
+  <div class="bg-white rounded-lg shadow-md p-6">
+<app-bar-graph [data]="financeBarChartData" [label]="'Zeraki Finance'"></app-bar-graph>
+  </div>
+  <div class="bg-white rounded-lg shadow-md p-6">
+<app-bar-graph [data]="timetableBarChartData" [label]="'Zeraki Timetable'"></app-bar-graph>
+  </div>
 </div>
 
 
