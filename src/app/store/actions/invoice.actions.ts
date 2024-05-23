@@ -1,4 +1,4 @@
-import {Invoice} from "../../../interfaces/invoice";
+import {Invoice} from "../../interfaces/invoice";
 import {createAction, props} from "@ngrx/store";
 
 

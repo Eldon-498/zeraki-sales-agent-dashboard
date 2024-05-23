@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { Invoice } from '../../../interfaces/invoice'
-import * as InvoiceActions from  '../../actions/invoice-actions/invoice.actions'
+import { Invoice } from '../../interfaces/invoice'
+import * as InvoiceActions from '../actions/invoice.actions'
 
 export interface InvoiceState {
   invoices: Invoice[];
