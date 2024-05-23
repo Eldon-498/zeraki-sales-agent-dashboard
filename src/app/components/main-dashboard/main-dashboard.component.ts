@@ -3,6 +3,7 @@ import {DashboardHeaderComponent} from "../dashboard-header/dashboard-header.com
 import {SidenavComponent} from "../side-nav/sidenav.component";
 import {RouterOutlet} from "@angular/router";
 import {SchoolsComponent} from "../schools/schools.component";
+import {PieChartComponent} from "../../shared/pie-chart/pie-chart.component";
 
 @Component({
   selector: 'app-main-dashboard',
@@ -11,6 +12,7 @@ import {SchoolsComponent} from "../schools/schools.component";
     DashboardHeaderComponent,
     SidenavComponent,
     SchoolsComponent,
+    PieChartComponent,
   ],
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css'
@@ -26,4 +28,7 @@ export class MainDashboardComponent {
   revenueFinance: number = 0;
   revenueTimetable: number = 0;
   bouncedCheques: number = 0;
+  public analyticsPieChartData: number[] = [300, 500];
+  public financePieChartData: number[] = [200, 800];
+  public timetablePieChartData: number[] = [600, 400];
 }

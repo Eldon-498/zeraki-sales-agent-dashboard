@@ -1,0 +1,12 @@
+<div class="bg-white shadow-lg rounded-lg p-4 m-4 flex flex-col items-center">
+  <canvas
+    baseChart
+    [data]="pieChartData"
+    [labels]="pieChartLabels"
+    [options]="pieChartOptions"
+    [plugins]="pieChartColors"
+    [type]="pieChartType"
+  >
+  </canvas>
+  <h3>{{ label }}</h3>
+</div>
