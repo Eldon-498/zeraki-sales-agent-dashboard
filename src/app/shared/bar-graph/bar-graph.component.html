@@ -1,1 +1,10 @@
-<p>bar-graph works!</p>
+<div class="chart-container">
+  <canvas baseChart
+          [data]="data"
+          [options]="barChartOptions"
+          [plugins]="barChartColors"
+          [type]="barChartType"
+          (chartClick)="chartClicked($event)">
+  </canvas>
+  <h3>{{ label }}</h3>
+</div>
