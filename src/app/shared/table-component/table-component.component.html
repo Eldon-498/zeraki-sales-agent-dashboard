@@ -1,0 +1,31 @@
+<div class="relative overflow-x-auto">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <ng-container *ngFor="let column of columns">
+        <th scope="col" class="px-6 py-3">
+          {{ column }}
+        </th>
+      </ng-container>
+      <th scope="col" class="px-6 py-3">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of data" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      <ng-container *ngFor="let column of columns">
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+          {{ item[column] }}
+        </td>
+      </ng-container>
+      <td class="px-6 py-4">
+        <app-button-component
+          (editClicked)="onEdit(item)"
+          (createClicked)="onCreate(item)"
+          (deleteClicked)="onDelete(item)"
+        ></app-button-component>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

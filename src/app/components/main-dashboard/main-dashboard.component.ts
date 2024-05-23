@@ -6,6 +6,7 @@ import {SchoolsComponent} from "../schools/schools.component";
 import {PieChartComponent} from "../../shared/pie-chart/pie-chart.component";
 import {ChartData} from "chart.js";
 import {BarGraphComponent} from "../../shared/bar-graph/bar-graph.component";
+import {TableComponentComponent} from "../../shared/table-component/table-component.component";
 
 @Component({
   selector: 'app-main-dashboard',
@@ -16,6 +17,7 @@ import {BarGraphComponent} from "../../shared/bar-graph/bar-graph.component";
     SchoolsComponent,
     PieChartComponent,
     BarGraphComponent,
+    TableComponentComponent,
   ],
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css'
@@ -54,4 +56,12 @@ export class MainDashboardComponent {
       { data: [150, 180, 200], label: 'Zeraki Timetable' }
     ]
   };
+  upcomingInvoices = [
+    { 'Product name': 'Apple MacBook Pro 17"', 'Color': 'Silver', 'Category': 'Laptop', 'Price': '$2999' },
+    { 'Product name': 'Microsoft Surface Pro', 'Color': 'White', 'Category': 'Laptop PC', 'Price': '$1999' },
+    { 'Product name': 'Magic Mouse 2', 'Color': 'Black', 'Category': 'Accessories', 'Price': '$99' }
+  ];
+
+  invoiceColumns = ['Product name', 'Color', 'Category', 'Price'];
+
 }
