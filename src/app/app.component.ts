@@ -6,12 +6,13 @@ import {SidenavComponent} from "./components/side-nav/sidenav.component";
 import {SchoolsComponent} from "./components/schools/schools.component";
 import {initFlowbite} from "flowbite";
 import {HttpClientModule} from "@angular/common/http";
+import {SnackBarComponent} from "./components/snack-bar/snack-bar.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HttpClientModule,MainDashboardComponent, DashboardHeaderComponent, SidenavComponent, SchoolsComponent],
+  imports: [RouterOutlet, HttpClientModule, MainDashboardComponent, DashboardHeaderComponent, SidenavComponent, SchoolsComponent, SnackBarComponent],
   providers:[HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
