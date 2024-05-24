@@ -1,5 +1,5 @@
 export const environment = {
-  baseUrl: '',
+  baseUrl: 'http://localhost:3000',
   production: true,
   jsonServerConfig: {
     port: 3001,
