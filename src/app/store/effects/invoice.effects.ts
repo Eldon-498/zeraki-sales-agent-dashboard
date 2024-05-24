@@ -44,5 +44,16 @@ export class InvoiceEffects {
       )
     )
   );
+  deleteInvoice$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(InvoiceActions.deleteInvoice),
+      mergeMap(action =>
+        this.invoiceService.deleteInvoice(action.id).pipe(
+          map(() => InvoiceActions.deleteInvoiceSuccess({ id: action.id })),
+          catchError(error => of(InvoiceActions.deleteInvoiceFailure({ error })))
+        )
+      )
+    )
+  );
 
 }

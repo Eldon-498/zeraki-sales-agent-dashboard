@@ -3,13 +3,16 @@ import {animate, style, transition, trigger} from "@angular/animations";
 import {BehaviorSubject, zip} from "rxjs";
 import { SnackbarType } from '../../enums/UtilEnums';
 import {SnackBarService} from "../../services/snack-bar.service";
-import {DOCUMENT} from "@angular/common";
+import {DOCUMENT, NgForOf, NgIf} from "@angular/common";
 import {SnackbarMessage} from "../../interfaces/snack-bar";
 
 @Component({
   selector: 'app-snack-bar',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf,
+    NgIf
+  ],
   animations: [
     trigger('slideInAnimation', [
       transition(':enter', [

@@ -9,6 +9,7 @@ import {BarGraphComponent} from "../../shared/bar-graph/bar-graph.component";
 import {TableComponentComponent} from "../../shared/table-component/table-component.component";
 import {InvoicesComponent} from "../invoices/invoices.component";
 import {EffectsModule} from "@ngrx/effects";
+import {SnackBarComponent} from "../snack-bar/snack-bar.component";
 
 @Component({
   selector: 'app-main-dashboard',
@@ -23,6 +24,7 @@ import {EffectsModule} from "@ngrx/effects";
     BarGraphComponent,
     TableComponentComponent,
     InvoicesComponent,
+    SnackBarComponent,
   ],
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css'
@@ -61,12 +63,6 @@ export class MainDashboardComponent {
       { data: [150, 180, 200], label: 'Zeraki Timetable' }
     ]
   };
-  upcomingInvoices = [
-    { 'Product name': 'Apple MacBook Pro 17"', 'Color': 'Silver', 'Category': 'Laptop', 'Price': '$2999' },
-    { 'Product name': 'Microsoft Surface Pro', 'Color': 'White', 'Category': 'Laptop PC', 'Price': '$1999' },
-    { 'Product name': 'Magic Mouse 2', 'Color': 'Black', 'Category': 'Accessories', 'Price': '$99' }
-  ];
 
-  invoiceColumns = ['Product name', 'Color', 'Category', 'Price'];
 
 }
