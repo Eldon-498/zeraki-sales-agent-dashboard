@@ -8,16 +8,22 @@ export interface InvoiceState {
 }
 
 export const initialState: InvoiceState = {
-  invoices: [],
+  invoices: [] ,
   error: null
 };
 
 export const invoiceReducer = createReducer(
   initialState,
-  on(InvoiceActions.loadInvoicesSuccess, (state, { invoices }) => ({
-    ...state,
-    invoices
-  })),
+  on(InvoiceActions.loadInvoicesSuccess, (state, { invoices }) => {
+    console.log('loadInvoices action received:',invoices);
+    const newState = {
+      ...state,
+      invoices
+    };
+    console.log('loadInvoicesSuccess action:', { invoices });
+    console.log('New state after loadInvoicesSuccess:', newState);
+    return newState;
+  }),
   on(InvoiceActions.loadInvoicesFailure, (state, { error }) => ({
     ...state,
     error
