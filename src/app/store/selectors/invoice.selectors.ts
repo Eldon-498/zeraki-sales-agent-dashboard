@@ -15,5 +15,5 @@ export const selectInvoiceError = createSelector(
 );
 export const selectUpcomingInvoices = createSelector(
   selectAllInvoices,
-  (invoices: Invoice[]) => invoices.sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime())
+  (invoices: Invoice[]) => [...invoices].sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime())
 );

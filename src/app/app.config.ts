@@ -9,13 +9,13 @@ import {InvoiceStoreModule} from "./store/selectors/store-modules/invoice-store.
 import {InvoiceEffects} from "./store/effects/invoice.effects";
 import {provideHttpClient} from "@angular/common/http";
 import {invoiceReducer} from "./store/reducers/invoice.reducers";
-import {selectInvoiceState} from "./store/selectors/invoice.selectors";
+
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimationsAsync(),
     provideStore([invoiceReducer]),
     provideHttpClient(),
     provideEffects([InvoiceEffects]),
-    provideState('invoices', invoiceReducer)
+    provideState('invoices', invoiceReducer),
   ],
 };

@@ -1,5 +1,5 @@
 export interface Invoice {
-  id: number;
+  id: string;
   schoolId: number;
   item: string;
   creationDate: string;

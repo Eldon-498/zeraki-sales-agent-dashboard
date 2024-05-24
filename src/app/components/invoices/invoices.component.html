@@ -15,8 +15,9 @@
     Error fetching invoices. Please try again later.
   </ng-template>
 </div>
+
+<!-- modal -->
 <div class="p-4">
-  <!-- ... -->
   <app-modal-component
     [showModal]="showModal"
     [mode]="modalMode"
@@ -26,4 +27,5 @@
     (onClose)="onModalClose()"
   ></app-modal-component>
 </div>
+<app-snack-bar></app-snack-bar>
 

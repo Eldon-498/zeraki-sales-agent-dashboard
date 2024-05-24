@@ -14,6 +14,6 @@ export const updateInvoice = createAction('[Invoice] Update Invoice', props<{ in
 export const updateInvoiceSuccess = createAction('[Invoice] Update Invoice Success', props<{ invoice: Invoice }>());
 export const updateInvoiceFailure = createAction('[Invoice] Update Invoice Failure', props<{ error: any }>());
 
-export const deleteInvoice = createAction('[Invoice] Delete Invoice', props<{ id: number }>());
-export const deleteInvoiceSuccess = createAction('[Invoice] Delete Invoice Success', props<{ id: number }>());
+export const deleteInvoice = createAction('[Invoice] Delete Invoice', props<{ id: string }>());
+export const deleteInvoiceSuccess = createAction('[Invoice] Delete Invoice Success', props<{ id: string }>());
 export const deleteInvoiceFailure = createAction('[Invoice] Delete Invoice Failure', props<{ error: any }>());

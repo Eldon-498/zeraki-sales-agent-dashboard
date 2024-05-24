@@ -44,13 +44,14 @@ export class ModalComponentComponent {
   }
 
   confirmSubmit(){
-    this.confirmationMode = true;
+      this.confirmationMode = true;
   }
 
   submitForm() {
    if (this.form.valid) {
       this.onSubmit.emit(this.form.value);
     }
+   this.confirmationMode = false;
   }
 
   closeConfirmationContent() {
@@ -59,5 +60,6 @@ export class ModalComponentComponent {
 
   closeForm(){
     this.onClose.emit();
+    this.confirmationMode = false;
   }
 }
