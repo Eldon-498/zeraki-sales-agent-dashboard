@@ -12,9 +12,9 @@
       <div>
         <p class="text-2xl font-bold text-gray-800">{{ totalSignups }}</p>
         <div class="text-sm text-gray-500">
-          <span>Analytics: {{ signupsAnalytics }}</span>
-          <span>Finance: {{ signupsFinance }}</span>
-          <span>Timetable: {{ signupsTimetable }}</span>
+          <p>Analytics: {{ signupsAnalytics }}</p>
+          <p>Finance: {{ signupsFinance }}</p>
+          <p>Timetable: {{ signupsTimetable }}</p>
         </div>
       </div>
     </div>
@@ -25,9 +25,9 @@
     <h3 class="text-lg font-semibold mb-2">Total Revenue</h3>
     <p class="text-4xl font-bold text-gray-800">{{ totalRevenue }}</p>
     <div class="text-sm text-gray-500">
-      <span>Analytics: {{ revenueAnalytics }}</span>
-      <span>Finance: {{ revenueFinance }}</span>
-      <span>Timetable: {{ revenueTimetable }}</span>
+      <p> Analytics: {{ revenueAnalytics }}</p>
+      <p>Finance: {{ revenueFinance }}</p>
+      <p>Timetable: {{ revenueTimetable }}</p>
     </div>
   </div>
 
@@ -38,7 +38,7 @@
   </div>
 
 </div>
-<h2 class="text-center mt-3">Target Analytics</h2>
+<h2 class="text-center text-lg font-semibold mt-3">Target Analytics</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <div class="bg-white rounded-lg shadow-md p-6">
     <app-pie-chart [data]="analyticsPieChartData" [label]="'Zeraki Analytics'"></app-pie-chart>
@@ -51,7 +51,7 @@
   </div>
 </div>
 
-<h2 class="text-center mt-3">Signups Analytics</h2>
+<h2 class="text-center text-lg font-semibold  mt-3">Signups Analytics</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <div class="bg-white rounded-lg shadow-md p-6">
 <app-bar-graph [data]="analyticsBarChartData" [label]="'Zeraki Analytics'"></app-bar-graph>
@@ -63,7 +63,7 @@
 <app-bar-graph [data]="timetableBarChartData" [label]="'Zeraki Timetable'"></app-bar-graph>
   </div>
 </div>
-<!--<app-table-component [columns]="invoiceColumns" [data]="upcomingInvoices"></app-table-component>-->
+
 <app-invoices></app-invoices>
 <app-snack-bar></app-snack-bar>
 

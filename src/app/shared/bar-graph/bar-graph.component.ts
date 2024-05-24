@@ -46,16 +46,15 @@ export class BarGraphComponent {
 
   public barChartType: ChartType = 'bar';
   public barChartColors: Array<any> = [
-    { backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56'] }
-  ];
+    { backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56'] },
+     ];
 
   public chartClicked(event: { event?: ChartEvent; active?: object[] }): void {
     console.log('Chart clicked:', event);
-    // Add your logic for handling chart click events here
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // Ensure change detection runs properly
     if (changes['data']) {
       console.log('Data changed:', this.data);
     }

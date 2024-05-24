@@ -1,10 +1,13 @@
 {
   "collections": [
+
     {
-      "id": "1",
-      "schoolId": 1,
-      "amount": 1000,
-      "date": "2024-05-20"
+      "id": "9bd6",
+      "invoiceNumber": "33",
+      "amount": "55",
+      "date": "2024-05-24",
+      "collectNumber": "22",
+      "status": "Valid"
     }
   ],
   "signups": [
@@ -42,7 +45,6 @@
     }
   ],
   "invoices": [
-
     {
       "id": "225e",
       "item": "Zeraki Analytics 4",
@@ -50,50 +52,18 @@
       "dueDate": "2024-06-01"
     },
     {
-      "id": "b77a",
-      "item": "Zeraki Analytics",
-      "amount": 1000,
-      "dueDate": "2024-06-01"
-    },
-    {
-      "id": "d1f9",
-      "item": "Zeraki Analytics",
-      "amount": 1000,
-      "dueDate": "2024-06-01"
-    },
-    {
-      "id": "6df5",
-      "item": "Zeraki Analytics",
-      "amount": 1000,
-      "dueDate": "2024-06-01"
-    },
-    {
-      "id": "7a77",
-      "item": "Zeraki Analytics",
-      "amount": 1000,
-      "dueDate": "2024-06-01"
-    },
-    {
-      "id": "6b47",
-      "item": "Zeraki Analytics",
-      "amount": 1000,
-      "dueDate": "2024-06-01"
-    },
-    {
-      "id": "f325",
-      "item": "Zeraki Analytics",
-      "amount": 1000,
-      "dueDate": "2024-06-01"
-    },
-    {
       "id": "9a2d",
       "item": "Mudasa Academy",
       "amount": "50000",
-      "dueDate": "2024-05-24"
+      "dueDate": "2024-05-24",
+      "invoiceNumber": "55",
+      "date": "2024-05-24",
+      "collectNumber": "22",
+      "status": "Bounced"
     },
     {
       "id": "b8b7",
-      "item": "fffsf",
+      "item": "Lenana School",
       "amount": "41111",
       "dueDate": "2024-05-24"
     },
@@ -101,6 +71,16 @@
       "id": "d670",
       "item": "Yes Academy",
       "amount": "2000",
+      "dueDate": "2024-05-24",
+      "invoiceNumber": "55",
+      "date": "2024-05-24",
+      "collectNumber": "11",
+      "status": "Valid"
+    },
+    {
+      "id": "3614",
+      "item": "Nairobi School",
+      "amount": "10000",
       "dueDate": "2024-05-24"
     }
   ]

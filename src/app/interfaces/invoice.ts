@@ -1,11 +1,11 @@
 export interface Invoice {
   id: string;
   schoolId: number;
-  item: string;
+  item: 'Zeraki Analytics' | 'Zeraki Finance' | 'Zeraki Timetable';
   creationDate: string;
   dueDate: string;
   amount: number;
   paidAmount: number;
   balance: number;
-  status: string;
+  status: 'Valid' | 'Pending';
 }

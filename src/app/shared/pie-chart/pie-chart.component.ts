@@ -56,7 +56,7 @@ export class PieChartComponent {
       datasets: [
         {
           data: this.data,
-          backgroundColor: ['#36A2EB', '#FF6384']
+          backgroundColor: ['#00FF00', '#FF0000']
         }
       ]
     };
@@ -74,7 +74,8 @@ export class PieChartComponent {
       datasets: [
         {
           data: this.data,
-          backgroundColor: ['#36A2EB', '#FF6384']
+          backgroundColor: ['#006600', '#990000']
+
         }
       ]
     };

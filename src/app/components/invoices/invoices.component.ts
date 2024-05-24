@@ -14,6 +14,7 @@ import {FormField} from "../../interfaces/form-field";
 import {SnackBarService} from "../../services/snack-bar.service";
 import {SnackbarType} from "../../enums/UtilEnums";
 import {SnackBarComponent} from "../snack-bar/snack-bar.component";
+import {addCollection, deleteCollection, updateCollection} from "../../store/actions/collection.actions";
 
 @Component({
   selector: 'app-invoices',
@@ -33,14 +34,27 @@ import {SnackBarComponent} from "../snack-bar/snack-bar.component";
 })
 export class InvoicesComponent {
   columns: { name: string; key: string }[] = [
+    { name: 'ID', key: 'id' },
     { name: 'School Name', key: 'item' },
     { name: 'Amount Due', key: 'amount' },
     { name: 'Due Date', key: 'dueDate' }
   ];
-  formFields: FormField[] = [
-    { name: 'item', label: 'School Name', type: 'text', value: '', validators: [] },
-    { name: 'amount', label: 'Amount Due', type: 'number', value: null, validators: [] },
-    { name: 'dueDate', label: 'Due Date', type: 'date', value: null, validators: [] }
+   formFields: FormField[] = [
+    { name: 'invoiceNumber', label: 'Invoice Number', type: 'number', value: undefined, validators: [] },
+    { name: 'amount', label: 'Amount', type: 'number', value: undefined, validators: [] },
+    { name: 'date', label: 'Date', type: 'date', value: undefined, validators: [] },
+    { name: 'collectNumber', label: 'Collect Number', type: 'number', value: undefined, validators: [] },
+    {
+      name: 'status',
+      label: 'Status',
+      type: 'select',
+      value: undefined,
+      validators: [],
+      options: [
+        { label: 'Valid', value: 'Valid' },
+        { label: 'Bounced', value: 'Bounced' }
+      ],
+    }
   ];
 
   showModal = false;
@@ -54,7 +68,6 @@ export class InvoicesComponent {
   }
   ngOnInit(): void {
     this.invoices$.subscribe(data => {
-      console.log('Invoices Data:', data);
     });
   }
   onEditClicked(item: any) {
@@ -80,18 +93,18 @@ export class InvoicesComponent {
   onModalSubmit(data: any) {
     switch (this.modalMode) {
       case 'add':
-        this.store.dispatch(addInvoice({ invoice: data }));
+        this.store.dispatch(addCollection({ collection: data }));
         this.snackBarService.setSnackbarType(SnackbarType.SUCCESS);
         this.snackBarService.setMessage('Invoice Added Successfully');
         break;
       case 'edit':
-        this.store.dispatch(updateInvoice({ invoice: data }));
+        const updatedCollection = { ...this.modalData, ...data };
+        this.store.dispatch(updateCollection({ collection: updatedCollection }));
         this.snackBarService.setSnackbarType(SnackbarType.SUCCESS);
         this.snackBarService.setMessage('Invoice Updated Successfully');
         break;
       case 'confirm':
-        console.log(this.modalData.id)
-        this.store.dispatch(deleteInvoice(this.modalData.id));
+        this.store.dispatch(deleteCollection({ id: this.modalData.id }));
         this.snackBarService.setSnackbarType(SnackbarType.SUCCESS);
         this.snackBarService.setMessage('Invoice Deleted Successfully');
         break;

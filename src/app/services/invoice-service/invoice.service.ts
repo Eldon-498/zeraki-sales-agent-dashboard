@@ -21,10 +21,12 @@ export class InvoiceService {
   }
 
   updateInvoice(invoice: Invoice): Observable<Invoice> {
-    return this.http.put<Invoice>(`${this.apiUrl}/${invoice.id}`, invoice);
+    const url = `${this.apiUrl}/${invoice.id}`;
+    return this.http.put<Invoice>(url, invoice);
   }
 
   deleteInvoice(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<void>(url);
   }
 }

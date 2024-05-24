@@ -5,4 +5,5 @@ export interface School {
   county: string;
   registrationDate: string;
   contact: string;
+  productName: 'Zeraki Analytics' | 'Zeraki Finance' | 'Zeraki Timetable';
 }

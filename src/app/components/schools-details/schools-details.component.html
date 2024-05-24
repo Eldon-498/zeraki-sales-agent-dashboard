@@ -1,1 +1,33 @@
-<p>schools-details works!</p>
+<div class="p-4">
+  <h2 class="text-xl font-bold text-center mb-4">All Schools</h2>
+  <ng-container *ngIf="invoices$ | async as invoices; else loading">
+    <app-table-component [columns]="columns" [data]="invoices"
+                         (editClicked)="onEditClicked($event)"
+                         (createClicked)="onCreateClicked()"
+                         (deleteClicked)="onDeleteClicked($event)">
+
+    </app-table-component>
+  </ng-container>
+  <ng-template #loading>
+    Loading invoices...
+  </ng-template>
+  <ng-template #error>
+    Error fetching invoices. Please try again later.
+  </ng-template>
+</div>
+
+<!-- modal -->
+<div class="p-4">
+  <app-modal-component
+    [showModal]="showModal"
+    [mode]="modalMode"
+    [data]="modalData"
+    [formFields]="formFields"
+    (onSubmit)="onModalSubmit($event)"
+    (onClose)="onModalClose()"
+  ></app-modal-component>
+</div>
+<app-snack-bar></app-snack-bar>
+
+
+
