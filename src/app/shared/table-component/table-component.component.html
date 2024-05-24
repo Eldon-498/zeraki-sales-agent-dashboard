@@ -4,7 +4,7 @@
     <tr>
       <ng-container *ngFor="let column of columns">
         <th scope="col" class="px-6 py-3">
-          {{ column }}
+          {{ column.name }}
         </th>
       </ng-container>
       <th scope="col" class="px-6 py-3">Actions</th>
@@ -12,9 +12,10 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of data" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+
       <ng-container *ngFor="let column of columns">
         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          {{ item[column] }}
+          {{ item[column.key] }}
         </td>
       </ng-container>
       <td class="px-6 py-4">

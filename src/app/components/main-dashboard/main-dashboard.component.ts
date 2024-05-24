@@ -7,17 +7,22 @@ import {PieChartComponent} from "../../shared/pie-chart/pie-chart.component";
 import {ChartData} from "chart.js";
 import {BarGraphComponent} from "../../shared/bar-graph/bar-graph.component";
 import {TableComponentComponent} from "../../shared/table-component/table-component.component";
+import {InvoicesComponent} from "../invoices/invoices.component";
+import {EffectsModule} from "@ngrx/effects";
 
 @Component({
   selector: 'app-main-dashboard',
   standalone: true,
   imports: [
+    EffectsModule,
+    InvoicesComponent,
     DashboardHeaderComponent,
     SidenavComponent,
     SchoolsComponent,
     PieChartComponent,
     BarGraphComponent,
     TableComponentComponent,
+    InvoicesComponent,
   ],
   templateUrl: './main-dashboard.component.html',
   styleUrl: './main-dashboard.component.css'

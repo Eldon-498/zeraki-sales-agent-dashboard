@@ -1,1 +1,12 @@
-<p>invoices works!</p>
+<div class="p-4">
+  <h2 class="text-xl font-bold text-center mb-4">Upcoming Invoices</h2>
+  <ng-container *ngIf="invoices$ | async as invoices; else loading">
+    <app-table-component [columns]="columns" [data]="invoices"></app-table-component>
+  </ng-container>
+  <ng-template #loading>
+    Loading invoices...
+  </ng-template>
+  <ng-template #error>
+    Error fetching invoices. Please try again later.
+  </ng-template>
+</div>

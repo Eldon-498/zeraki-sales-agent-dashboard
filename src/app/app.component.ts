@@ -5,12 +5,14 @@ import {DashboardHeaderComponent} from "./components/dashboard-header/dashboard-
 import {SidenavComponent} from "./components/side-nav/sidenav.component";
 import {SchoolsComponent} from "./components/schools/schools.component";
 import {initFlowbite} from "flowbite";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainDashboardComponent, DashboardHeaderComponent, SidenavComponent, SchoolsComponent],
+  imports: [RouterOutlet,HttpClientModule,MainDashboardComponent, DashboardHeaderComponent, SidenavComponent, SchoolsComponent],
+  providers:[HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
