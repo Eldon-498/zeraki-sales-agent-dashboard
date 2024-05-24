@@ -4,6 +4,7 @@ import {BehaviorSubject, zip} from "rxjs";
 import { SnackbarType } from '../../enums/UtilEnums';
 import {SnackBarService} from "../../services/snack-bar.service";
 import {DOCUMENT} from "@angular/common";
+import {SnackbarMessage} from "../../interfaces/snack-bar";
 
 @Component({
   selector: 'app-snack-bar',
