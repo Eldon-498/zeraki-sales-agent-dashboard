@@ -1,6 +1,5 @@
 {
   "collections": [
-
     {
       "id": "9bd6",
       "invoiceNumber": "33",
@@ -36,12 +35,40 @@
   ],
   "schools": [
     {
-      "id": "1",
-      "name": "School A",
-      "type": "Primary",
+      "id": 1,
+      "name": "Mudasa Academy",
+      "type": "Secondary",
       "county": "Nairobi",
-      "registrationDate": "2024-01-10",
-      "contact": "contact@schoola.com"
+      "registrationDate": "2015-08-15",
+      "contact": "+254712345678",
+      "productName": "Zeraki Analytics"
+    },
+    {
+      "id": "7f1f",
+      "name": "Mbale High",
+      "type": "undefined",
+      "county": "Migori",
+      "registrationDate": "2024-05-24",
+      "contact": "12596565",
+      "productName": "undefined"
+    },
+    {
+      "id": "7487",
+      "name": "Masinde Muliro",
+      "type": "Secondary",
+      "county": "Kakamega",
+      "registrationDate": "",
+      "contact": "2548949",
+      "productName": "Zeraki Finance"
+    },
+    {
+      "id": "4fda",
+      "name": "Kanga High",
+      "type": "Secondary",
+      "county": "Migori",
+      "registrationDate": "2024-05-24",
+      "contact": "06662626",
+      "productName": "Zeraki Finance"
     }
   ],
   "invoices": [

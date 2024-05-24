@@ -12,6 +12,9 @@ import {SnackBarService} from "../../services/snack-bar.service";
 import {addInvoice, deleteInvoice, loadInvoices, updateInvoice} from "../../store/actions/invoice.actions";
 import {selectUpcomingInvoices} from "../../store/selectors/invoice.selectors";
 import {SnackbarType} from "../../enums/UtilEnums";
+import {School} from "../../interfaces/school";
+import {selectAllSchools} from "../../store/selectors/school.selectors";
+import {addSchool, deleteSchool, loadSchools, updateSchool} from "../../store/actions/school.actions";
 
 @Component({
   selector: 'app-schools-details',
@@ -29,28 +32,49 @@ import {SnackbarType} from "../../enums/UtilEnums";
 export class SchoolsDetailsComponent {
   columns: { name: string; key: string }[] = [
     { name: 'ID', key: 'id' },
-    { name: 'School Name', key: 'item' },
-    { name: 'Amount Due', key: 'amount' },
-    { name: 'Due Date', key: 'dueDate' }
-  ];
-  formFields: FormField[] = [
-    { name: 'item', label: 'School Name', type: 'text', value: '', validators: [] },
-    { name: 'amount', label: 'Amount Due', type: 'number', value: null, validators: [] },
-    { name: 'dueDate', label: 'Due Date', type: 'date', value: null, validators: [] }
+    { name: 'School Name', key: 'name' },
+    { name: 'School Type', key: 'type' },
+    { name: 'County', key: 'county' },
+    { name: 'Registration Date', key: 'registrationDate' },
+    { name: 'Contact', key: 'contact' },
+    { name: 'Product Name', key: 'productName' }
   ];
 
+  formFields: FormField[] = [
+    { name: 'name', label: 'School Name', type: 'text', value: '', validators: [] },
+    {
+      name: 'type',
+      label: 'School Type',
+      type: 'select',
+      value: null,
+      validators: [],
+      options: [
+        { value: 'Primary', label: 'Primary' },
+        { value: 'Secondary', label: 'Secondary' },
+        { value: 'IGCSE', label: 'IGCSE' }
+      ]
+    },
+    { name: 'county', label: 'County', type: 'text', value: '', validators: [] },
+    { name: 'registrationDate', label: 'Registration Date', type: 'date', value: null, validators: [] },
+    { name: 'contact', label: 'Contact', type: 'text', value: '', validators: [] },
+    { name: 'productName',label: 'Product Name',type: 'select',value: null, validators: [],
+      options: [
+        { value: 'Zeraki Analytics', label: 'Zeraki Analytics' },
+        { value: 'Zeraki Finance', label: 'Zeraki Finance' },
+        { value: 'Zeraki Timetable', label: 'Zeraki Timetable' }
+      ]
+    }
+  ];
   showModal = false;
   modalMode: 'add' | 'edit' | 'confirm' = 'add';
   modalData: any = {};
-  invoices$: Observable<Invoice[]>;
+  schools$: Observable<School[]>;
 
   constructor(private store: Store<AppState>, private snackBarService: SnackBarService) {
-    this.store.dispatch(loadInvoices());
-    this.invoices$ = this.store.select(selectUpcomingInvoices);
+    this.store.dispatch(loadSchools());
+    this.schools$ = this.store.select(selectAllSchools);
   }
   ngOnInit(): void {
-    this.invoices$.subscribe(data => {
-    });
   }
   onEditClicked(item: any) {
     this.modalMode = 'edit';
@@ -75,19 +99,19 @@ export class SchoolsDetailsComponent {
   onModalSubmit(data: any) {
     switch (this.modalMode) {
       case 'add':
-        this.store.dispatch(addInvoice({ invoice: data }));
+        this.store.dispatch(addSchool({ school: data }));
         this.snackBarService.setSnackbarType(SnackbarType.SUCCESS);
         this.snackBarService.setMessage('Invoice Added Successfully');
         break;
       case 'edit':
         const updatedInvoice = { ...this.modalData, ...data };
-        this.store.dispatch(updateInvoice({ invoice: updatedInvoice }));
+        this.store.dispatch(updateSchool({ school: updatedInvoice }));
         this.snackBarService.setSnackbarType(SnackbarType.SUCCESS);
         this.snackBarService.setMessage('Invoice Updated Successfully');
         break;
       case 'confirm':
         console.log(this.modalData.id)
-        this.store.dispatch(deleteInvoice({ id: this.modalData.id }));
+        this.store.dispatch(deleteSchool({ id: this.modalData.id }));
         this.snackBarService.setSnackbarType(SnackbarType.SUCCESS);
         this.snackBarService.setMessage('Invoice Deleted Successfully');
         break;
