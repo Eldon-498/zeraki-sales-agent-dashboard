@@ -53,7 +53,11 @@ export class ModalComponentComponent {
     }
   }
 
-  close() {
+  closeConfirmationContent() {
     this.confirmationMode = false;
+  }
+
+  closeForm(){
+    this.onClose.emit();
   }
 }
