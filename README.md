@@ -51,7 +51,9 @@ The default home route is http://localhost:4200/dashboard.
 Reusable components for bar charts and pie charts are used for better maintainability and consistency.
 
 ## Module Organization: 
-The store, selectors, reducers, actions, and effects for each module are organized in separate folders. Services are also grouped into a dedicated folder.
+Module components are grouped in the component folder.
+services are gropued in one folder
+The store's actions, reducers, selectors and effect are in one folder for all module ations.
 
 ## Shared Components: 
 A shared components folder contains reusable components like snack bars, pie charts, bar charts, button, tabble and modal component.
@@ -81,7 +83,8 @@ git@github.com:Eldon-498/zeraki-sales-agent-dashboard.git zeraki-dashboard
 ## then
 Navigate to the project directory: cd zeraki-dashboard
 Install dependencies: npm install
-Start the development server: ng serve
+## Start the development server:
+ng serve. This will run both angular and json server concurrently.
 Open your browser and visit http://localhost:4200 to access the application.
 
 ## Deployment
