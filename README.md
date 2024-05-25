@@ -32,6 +32,9 @@ State Management: Utilizes NgRx Store for efficient state management due to Zera
 
 ## Design Choices
 
+ ## Color scheme
+White background for minimalistic yet intuitive interface that minimizes distractions
+
 ## Modal with Form Builder:
 A modal with a form builder generates input fields for the relevant module to be updated.
 
@@ -49,8 +52,9 @@ Reusable components for bar charts and pie charts are used for better maintainab
 
 ## Module Organization: 
 The store, selectors, reducers, actions, and effects for each module are organized in separate folders. Services are also grouped into a dedicated folder.
+
 ## Shared Components: 
-A shared components folder contains reusable components like snack bars, pie charts, and bar charts.
+A shared components folder contains reusable components like snack bars, pie charts, bar charts, button, tabble and modal component.
 
 ## Component Structure:
 The components folder contains components for collections, dashboard header, invoices, main dashboard, schools, school details, side navigation, and snack bar.
@@ -59,7 +63,7 @@ The components folder contains components for collections, dashboard header, inv
 The project utilizes enums for module types, collections, and other relevant data types.
 
 ## Snack Bar Service and Dashboard: 
-A snack bar service and dashboard are implemented for sending notifications on performed actions.
+A snack bar service and dashboard are implemented for sending notifications on performed actions. Currently its only for succesfull operations
 
 ## Reusable Table Component:
 A reusable table component is included in the shared folder.
@@ -81,27 +85,27 @@ Start the development server: ng serve
 Open your browser and visit http://localhost:4200 to access the application.
 
 ## Deployment
-For deployment instructions, please refer to the Angular documentation: Deployment.
+App was deployed using netlify.
 
 ## Dependencies
 The project relies on the following dependencies:
 
 ## Angular Versions
-@angular-devkit/architect       0.1703.8
-@angular-devkit/build-angular   17.3.8
-@angular-devkit/core            17.3.8
-@angular-devkit/schematics      17.3.8
-@angular/cdk                    17.3.10
-@angular/cli                    17.3.8
-@angular/material               17.3.10
-@schematics/angular             17.3.8
-rxjs                            7.8.1
-typescript                      5.4.5
-zone.js                         0.14.6
+* @angular-devkit/architect       0.1703.8
+* @angular-devkit/build-angular   17.3.8
+* @angular-devkit/core            17.3.8
+* @angular-devkit/schematics      17.3.8
+* @angular/cdk                    17.3.10
+* @angular/cli                    17.3.8
+* @angular/material               17.3.10
+* @schematics/angular             17.3.8
+* rxjs                            7.8.1
+* typescript                      5.4.5
+* zone.js                         0.14.6
 
 ## NgRx Version
-@ngrx/effects@17.2.0
-@ngrx/store@17.2.0
+* @ngrx/effects@17.2.0
+* @ngrx/store@17.2.0
 
 ## Contributing
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
