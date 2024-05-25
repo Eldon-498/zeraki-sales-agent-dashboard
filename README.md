@@ -1,4 +1,58 @@
-# ZerakiSalesAgentDashboard
+# Zeraki Sales Dashboard
+This project is an Angular application that serves as a responsive sales agent dashboard for Zeraki, a company revolutionizing education across Africa. The dashboard facilitates the management of school accounts, invoicing, collections, and data visualization for targets and sign-ups.
+## Features
+## Side Navigation
+The application includes a side navigation bar that enhances navigation and organization, divided into two primary modules:
+
+## Dashboard Module: 
+Displays dynamic counters for Collections, Sign-ups, Total Revenue, and Bounced Cheques.
+
+## Schools Module: 
+Includes a list of schools with options to view detailed information (Invoices and Collections).
+
+## Dashboard Overview
+The sales agent dashboard provides a comprehensive overview with the following features:
+
+* Top Card Metrics
+
+* Collections: Displays the total number of collections made, dynamically updated as new collections are recorded.
+* Sign-ups: Shows the total number of new school sign-ups, with a breakdown by product (Zeraki Analytics, Zeraki Finance, and Zeraki Timetable).
+* Total Revenue: Presents the overall revenue collected, with further details showing the revenue per product.
+* Bounced Cheques: Indicates the number of cheques that have bounced.
+
+## Targets Visualization
+
+* Pie Charts: Visually represents the progress towards sign-up targets for Zeraki's products (Zeraki Analytics, Zeraki Finance, and Zeraki Timetable) using pie charts. Red color represents targets not achieved, and green color represents targets achieved.
+Tooltips: Implements interactivity with tooltips on hover, displaying exact numbers or percentages.
+
+* Sign-ups Overview
+
+* Bar Graphs: Uses bar graphs to represent the distribution of sign-ups across different types of schools (Primary, Secondary, IGCSE) for each of Zeraki's products.
+* Interactive Elements: Includes interactive elements, such as clicking on a bar to get more detailed statistics.
+
+## Upcoming Invoices
+
+* Invoice List: Displays a list of upcoming invoices ordered by due date, starting from the earliest.
+* Quick Actions: Each entry shows the school name, amount due, due date, and quick actions for payment collection.
+* Payment Collection: Includes a feature to directly collect payment from the list, with a modal or side-panel form for entering collection details.
+
+## School Management
+The school management module facilitates the organization, viewing, and manipulation of school-related data, such as invoices and collections.
+Schools
+
+* School List: Displays a list of all schools, allowing users to select a school to view more detailed information, including associated invoices and collections.
+* School Details: Provides comprehensive details about each school, such as name, type (Primary, Secondary, IGCSE), product they are using, county, registration date, contact information, and school balance.
+
+## Invoices
+
+* Invoice List: Displays all invoices associated with a school, with filters for completed and pending invoices. Shows details such as invoice number, invoice item, creation and due dates, amount, paid amount, balance, completion status, and days until due.
+* CRUD Operations: Enables the creation, reading, updating, and deletion of invoices. Invoices automatically generate a unique invoice number, and users can specify due dates, amounts, and associated items.
+* Collection Management: Allows adding collections to an invoice with options for marking partial or full payments. Provides functionalities to update the invoice status based on collection results, such as marking an invoice as incomplete if a collection bounces.
+
+## Collections
+
+* Collection List: Shows all collections for each school, including invoice number, collection number, date of collection, status (Valid, Bounced), and amount.
+* Collection Status Update: Allows users to update the status of collections directly from the list, marking them as valid or bounced. By default, a collection is marked as valid.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
