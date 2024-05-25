@@ -82,7 +82,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 Framework: Built using the latest stable version of Angular for a robust and scalable application.
 Data Handling: Simulates real-time data updates using mock JSON data and utilizes mock APIs (such as json-server) to facilitate development without dependency on a backend server.
-State Management: Utilizes NgRx Store for efficient state management due to Zeraki's high number of users.
+
+## State Management: Utilizes NgRx Store for efficient state management due to Zeraki's high number of users.
 
 ## Design Choices
 
